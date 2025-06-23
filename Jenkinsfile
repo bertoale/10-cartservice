@@ -34,7 +34,10 @@ pipeline{
     }
     stage("Deploy ke Production"){
       steps{
-        sh "kubectl apply -f cartservice.yaml"
+        sh ""
+        kubectl apply -f cartservice.yaml
+        kubectl apply -f redis.yaml
+        ""
       }
     }
   }
